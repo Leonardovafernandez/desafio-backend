@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "init": "ts-node src/index.ts",
-    "start": "node ./index.ts",
+    "start": "ts-node ./index.ts",
     "dev": "nodemon --exec ts-node index.ts",
     "build": "babel src --out-dir dist"
   },
