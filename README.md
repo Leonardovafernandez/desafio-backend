@@ -1,49 +1,97 @@
-# Desafio Backend
+# Documentação do Backend - Desafio SeuNome
 
-Este é o repositório do backend para o projeto Desafio. O backend é responsável por gerenciar os dados das notas dos alunos.
+## Visão Geral
 
-## Configuração do Banco de Dados
+Este documento descreve o backend do projeto "Desafio" e fornece informações sobre a estrutura do banco de dados, as regras de negócio, as rotas da API e outras informações relevantes para o desenvolvimento e uso do sistema.
 
-Certifique-se de configurar o banco de dados com as seguintes especificações:
+## Branch Atual
 
-- Banco de Dados: Desafio
-- Tabela: Resultado
-  - bimestre: Enum ("PRIMEIRO","SEGUNDO","TERCEIRO","QUARTO")
-  - disciplina: Enum ("Biologia", "Artes", "Geografia", "Sociologia")
-  - nota: Float
-  - criadoEm: Date
-  - atualizadoEm: Date
-  - id: String
+- Nome da Branch: `desafio-seunome`
 
-## Configuração do Ambiente
+## Banco de Dados
 
-Antes de executar o backend, certifique-se de configurar as variáveis de ambiente necessárias, como a conexão com o banco de dados.
+### Criação do Banco de Dados
 
-```shell
-# Exemplo de arquivo .env
-DB_HOST=seu-host-do-banco-de-dados
-DB_PORT=porta-do-banco
-DB_USER=seu-usuario
-DB_PASSWORD=sua-senha
-DB_NAME=Desafio
+```sql
+CREATE DATABASE Desafio;
+
 ```
+## Tabelas do Banco de Dados
+### Tabela Bimestre
 
-## Rotas da API
+```
+sql
 
-O backend fornece as seguintes rotas da API:
+CREATE TABLE Bimestre (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL
+);
 
-    GET /grades: Lista todas as notas.
-    POST /grades: Cria uma nova nota.
-    DELETE /grade/:id: Remove uma nota por ID.
+```
+### Tabela Disciplina
 
-## Regras de Notas
+```
+sql
 
-    A nota deve estar no intervalo de 0 a 10.
+CREATE TABLE Disciplina (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL
+);
+
+```
+### Tabela Resultado
+
+```
+sql
+
+CREATE TABLE Resultado (
+  id SERIAL PRIMARY KEY,
+  bimestre_id INT REFERENCES Bimestre(id),
+  disciplina_id INT REFERENCES Disciplina(id),
+  nota FLOAT,
+  criadoEm TIMESTAMP,
+  atualizadoEm TIMESTAMP
+);
+
+```
+### Regras
+
+    Nota: Deve estar no intervalo de >=0 e <=10.
     Apenas uma disciplina por bimestre é permitida.
 
-## Configuração e Execução
+## API
 
-    Clone este repositório.
-    Configure as variáveis de ambiente em um arquivo .env.
-    Execute npm install para instalar as dependências.
-    Execute npm start para iniciar o servidor.
+A API oferece as seguintes funcionalidades:
+### Listagem
+
+    Método: GET
+    Rota: https://localhost:3333/grades
+
+### Criação
+
+    Método: POST
+    Rota: https://localhost:3333/grade
+    Exemplo de Corpo da Requisição:
+
+```
+json
+
+{
+  "bimestre_id": 4,
+  "disciplina_id": 1,
+  "nota": 6.7
+}
+
+```
+### Remoção
+
+    Método: DELETE
+    Rota: http://localhost:3333/grade/:id
+
+## Figma (Apoio / Entendimento das funcionalidades)
+
+    Link para o Figma
+
+    Todas as rotas são públicas e não necessitam de autenticação para acessar.
+
+Este documento fornece uma visão geral das funcionalidades e da estrutura do projeto. Certifique-se de atualizá-lo conforme o projeto evolui e novas funcionalidades são adicionadas. É fundamental que toda a equipe tenha acesso a essa documentação para garantir a compreensão e o desenvolvimento eficaz do projeto.
