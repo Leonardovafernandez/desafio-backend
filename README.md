@@ -90,9 +90,9 @@ json
 
 ## Figma (Apoio / Entendimento das funcionalidades)
 
-    [Link para o Figma](https://www.figma.com/file/YnZJ3bXle54cM6eQWnJZPH/Desafio-(Copy)?type=design&node-id=3%3A493&mode=dev)
+  [Link para o Figma](https://www.figma.com/file/YnZJ3bXle54cM6eQWnJZPH/Desafio-(Copy)?type=design&node-id=3%3A493&mode=dev)
 
-    Todas as rotas são públicas e não necessitam de autenticação para acessar.
+  Todas as rotas são públicas e não necessitam de autenticação para acessar.
 
 Este documento fornece uma visão geral das funcionalidades e da estrutura do projeto. Certifique-se de atualizá-lo conforme o projeto evolui e novas funcionalidades são adicionadas. É fundamental que toda a equipe tenha acesso a essa documentação para garantir a compreensão e o desenvolvimento eficaz do projeto.
 
