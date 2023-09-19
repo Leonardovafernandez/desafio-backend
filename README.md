@@ -1,4 +1,4 @@
-# Documentação do Backend - Desafio SeuNome
+# Documentação do Backend - Desafio Leonardo Fernandez
 
 ## Visão Geral
 
@@ -6,7 +6,7 @@ Este documento descreve o backend do projeto "Desafio" e fornece informações s
 
 ## Branch Atual
 
-- Nome da Branch: `desafio-seunome`
+- Nome da Branch: `desafio-leonardo-fernandez`
 
 ## Banco de Dados
 
@@ -92,6 +92,6 @@ json
 
     Link para o Figma
 
-    Todas as rotas são públicas e não necessitam de autenticação para acessar.
+    Todas as rotas são públicas e não necessitam de autenticação para acessar.[]
 
 Este documento fornece uma visão geral das funcionalidades e da estrutura do projeto. Certifique-se de atualizá-lo conforme o projeto evolui e novas funcionalidades são adicionadas. É fundamental que toda a equipe tenha acesso a essa documentação para garantir a compreensão e o desenvolvimento eficaz do projeto.
